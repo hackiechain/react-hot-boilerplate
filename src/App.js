@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import InfiniteList from './InfiniteList';
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div>
+        <InfiniteList/>
+      </div>
     );
   }
 }
