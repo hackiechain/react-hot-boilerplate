@@ -22,7 +22,7 @@ export default class InfiniteList extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      elements: this.buildElements(0, 10),
+      elements: this.buildElements(0, 100),
       isInfiniteLoading: false
     };
   }
@@ -42,7 +42,7 @@ export default class InfiniteList extends Component {
     });
     setTimeout(() => {
       var elemLength = this.state.elements.length,
-        newElements = this.buildElements(elemLength, elemLength + 10);
+        newElements = this.buildElements(elemLength, elemLength + 50);
       this.setState({
         isInfiniteLoading: false,
         elements: this.state.elements.concat(newElements)
@@ -60,8 +60,8 @@ export default class InfiniteList extends Component {
     console.log("render", this.state.elements.length);
 
     return <Infinite className='infinite-example'
+                     useWindowAsScrollContainer={true}
                      elementHeight={50}
-                     containerHeight={250}
                      infiniteLoadBeginEdgeOffset={200}
                      onInfiniteLoad={()=>{this.handleInfiniteLoad()}}
                      loadingSpinnerDelegate={this.elementInfiniteLoad()}
