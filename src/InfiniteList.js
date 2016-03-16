@@ -7,12 +7,13 @@ export class ListItem extends Component {
   };
 
   render() {
-    return <div className="infinite-list-item" style={
+    return <div className="infinite-list-item row" style={
       {
-      height: 50,lineHeight: "50px"
+      height: 50
       }
     }>
-      List Item {this.props.index}
+      <div className="col-md-6">List Item {this.props.index}</div>
+      <div className="col-md-6">List Item {this.props.index + 1}</div>
     </div>;
   }
 }
@@ -57,7 +58,7 @@ export default class InfiniteList extends Component {
   }
 
   render() {
-    console.log("render", this.state.elements.length);
+    console.log('render', this.state.elements.length);
 
     return <Infinite className='infinite-example'
                      useWindowAsScrollContainer={true}
