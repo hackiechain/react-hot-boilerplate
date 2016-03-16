@@ -1,5 +1,6 @@
 import React, { Component,PropTypes } from 'react';
 import Infinite from 'react-infinite';
+import styles from './InfiniteList.scss';
 
 export class ListItem extends Component {
   static propTypes = {
@@ -59,7 +60,7 @@ export default class InfiniteList extends Component {
 
   render() {
     console.log('render', this.state.elements.length);
-
+    console.log(styles);
     return <Infinite className='infinite-example'
                      useWindowAsScrollContainer={true}
                      elementHeight={50}

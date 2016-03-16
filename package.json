@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
-    "dist": "NODE_ENV=production webpack -p --progress"
+    "dist": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js"
   },
   "repository": {
     "type": "git",
@@ -44,10 +44,12 @@
   "dependencies": {
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.4.2",
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.6",
     "react-infinite": "^0.9.0",
+    "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0"
   }
 }
