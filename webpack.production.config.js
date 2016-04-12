@@ -35,7 +35,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'src')},
+      {test: /\.js$/, loaders: ['react-hot', 'babel', 'imports?jQuery=jquery,$=jquery'], include: path.join(__dirname, 'src')},
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
