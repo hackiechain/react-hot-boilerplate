@@ -17,7 +17,6 @@ module.exports = {
     // optimizations
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -35,7 +34,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['react-hot', 'babel', 'imports?jQuery=jquery,$=jquery'], include: path.join(__dirname, 'src')},
+      {test: /\.js$/, loaders: ['babel', 'imports?jQuery=jquery,$=jquery'], include: path.join(__dirname, 'src')},
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
